@@ -77,7 +77,7 @@ step2. 登陆GitHub，打开“Account settings”，“SSH Keys”页面;
 
 点“Add Key”，你就应该看到已经添加的Key.
 
-##### 添加远程库
+#### 添加远程库
 
 ​	1.在Github创建"Create a new repo"
 
@@ -102,9 +102,15 @@ git remote rm <name>
 #根据名字删除(解除本地与远程的绑定关系)
 ```
 
+#### clone
 
+如果从0开始开发,最好的方式是先创建远程库,然后从远程库clone.
 
-##### clone
+```
+git clone git@github.com:<username>/<repo-name>.git
+```
+
+支持https/ssh协议,通常ssh协议更快.
 
 ### 分支管理
 
