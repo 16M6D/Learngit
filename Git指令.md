@@ -61,6 +61,50 @@ Repository:
 `rm <file>`删除文件后此时工作区和版本库中不一致,若确实要从版本库中删除则使用 `git rm ``git commit ` ,若删错了,`git checkout -- test.txt`,即用版本库中的版本替换工作区中的版本.
 
 ### 远程仓库
+step1.generate SSH Key
+
+​	在用户主目录下，看看有没有.ssh目录，如果有，再看看这个目录下有没有`id_rsa`和`id_rsa.pub`这两个文件，如果已经有了，可直接跳到下一步。如果没有，打开Shell（Windows下打开Git Bash），创建SSH Key：
+
+```
+ $ ssh-keygen -t rsa -C "youremail@example.com"
+```
+
+ 	如果一切顺利的话，可以在用户主目录里找到`.ssh`目录，里面有`id_rsa`和`id_rsa.pub`两个文件，这两个就是SSH Key的秘钥对，`id_rsa`是私钥，不能泄露出去，`id_rsa.pub`是公钥，可以放心地告诉任何人。
+
+step2. 登陆GitHub，打开“Account settings”，“SSH Keys”页面;
+
+然后，点“Add SSH Key”，填上任意Title，在Key文本框里粘贴`id_rsa.pub`文件的内容;
+
+点“Add Key”，你就应该看到已经添加的Key.
+
+##### 添加远程库
+
+​	1.在Github创建"Create a new repo"
+
+​	2.要关联一个远程库，使用命令`git remote add origin git@server-name:path/repo-name.git`；
+
+​	3.关联一个远程库时必须给远程库指定一个名字，`origin`是默认习惯命名；
+
+​	4.关联后，使用命令`git push -u origin master`第一次推送master分支的所有内容；
+
+​	5.此后，每次本地提交后，只要有必要，就可以使用命令`git push origin master`推送最新修改；
+
+​	6.SSH warning:
+
+>  Git使用SSH连接，而SSH连接在第一次验证GitHub服务器的Key时，需要你确认GitHub的Key的指纹信息是否真的来自GitHub的服务器，输入`yes`回车即可。 
+
+​	删除远程库
+
+```
+git remote -v
+#查看远程库信息
+git remote rm <name>
+#根据名字删除(解除本地与远程的绑定关系)
+```
+
+
+
+##### clone
 
 ### 分支管理
 
