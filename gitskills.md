@@ -120,7 +120,17 @@ git clone git@github.com:<username>/<repo-name>.git
 
 ### 分支管理
 
-new folder
+#### 创建与合并分支
+
+```
+#创建并切换到dev分支
+git checkout -b dev
+#相当于同时执行git branch dev git checkout dev
+#查看当前分支
+git branch
+```
+
+
 
 ### 标签管理
 
