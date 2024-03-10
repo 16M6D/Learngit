@@ -129,6 +129,7 @@ git checkout -b dev
 #查看当前分支
 git branch
 ```
+git merge <feature> 将feature分支合并到当前分支
 #### 解决冲突
 git log --graph 查看分支合并图
 删除分支
