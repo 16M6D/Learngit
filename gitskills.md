@@ -136,7 +136,7 @@ git log --graph 查看分支合并图
 git branch -d feature1
 
 #### 管理策略
-![alt text](image.png)
+![alt text](FeatureManage.png)
 master分支应该非常稳定,仅用来发布,日常在dev分支
 merge时,加上--no-ff合并后的历史有分支，能看出来曾经做过合并，而fast forward合并就看不出来曾经做过合并
 #### 解决BUG分支
