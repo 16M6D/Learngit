@@ -4,3 +4,4 @@ Use 'git add readme.txt' to add this text
 And commit it.
 Git has a mutable index called stage
 Git tracks changes of files.
+Git feature management NO Fast-forward.
