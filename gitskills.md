@@ -129,8 +129,13 @@ git checkout -b dev
 #查看当前分支
 git branch
 ```
-
-
+#### 解决冲突
+git log --graph 查看分支合并图
+```
+删除分支
+```
+git branch -d feature1
+feature1
 
 ### 标签管理
 
