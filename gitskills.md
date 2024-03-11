@@ -140,5 +140,25 @@ git branch -d feature1
 master分支应该非常稳定,仅用来发布,日常在dev分支
 merge时,加上--no-ff合并后的历史有分支，能看出来曾经做过合并，而fast forward合并就看不出来曾经做过合并
 #### 解决BUG分支
+暂时用不到
+#### feature分支
+添加一个新功能时，你肯定不希望因为一些实验性质的代码，把主分支搞乱了，所以，每添加一个新功能，最好新建一个feature分支，在上面开发，完成后，合并(与dev分支)，最后，删除该feature分支。
+开发一个新feature，最好新建一个分支；
+如果要丢弃一个没有被合并过的分支，可以通过git branch -D <name>强行删除
+#### 多人协作
+远程库默认名称 origin
+使用 git remote 查看远程库信息
+git remote -v 查看详细信息 fetch表示可以抓取,push可推送
+推送不同分支
+	 git push origin master
+	 git push origin dev
+
+从本地推送分支，使用git push origin branch-name，如果推送失败，先用git pull抓取远程的新提交；
+
+在本地创建和远程分支对应的分支，使用git checkout -b branch-name origin/branch-name，本地和远程分支的名称最好一致；
+
+建立本地分支和远程分支的关联，使用git branch --set-upstream branch-name origin/branch-name；
+
+从远程抓取分支，使用git pull，如果有冲突，要先处理冲突。
 ### 标签管理
 
