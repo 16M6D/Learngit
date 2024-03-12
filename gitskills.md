@@ -162,3 +162,65 @@ git remote -v 查看详细信息 fetch表示可以抓取,push可推送
 从远程抓取分支，使用git pull，如果有冲突，要先处理冲突。
 ### 标签管理
 
+需要时再看
+
+### 使用GitHub
+
+参与开源项目
+
+> "FORK" 在自己的账户下克隆了一个bootstrap仓库
+>
+> git clone git@github.com:16M6D/<project>.git 在自己的账户下clone仓库才能推送修改
+>
+> ```ascii
+> ┌─ GitHub ────────────────────────────────────┐
+> │                                             │
+> │ ┌─────────────────┐     ┌─────────────────┐ │
+> │ │ twbs/bootstrap  │────>│  my/bootstrap   │ │
+> │ └─────────────────┘     └─────────────────┘ │
+> │                                  ▲          │
+> └──────────────────────────────────┼──────────┘
+>                                    ▼
+>                           ┌─────────────────┐
+>                           │ local/bootstrap │
+>                           └─────────────────┘
+>       
+> ```
+>
+> 通过GitHub的pull request给官方仓库贡献代码
+
+
+
+### 自定义Git
+
+#### 忽略特殊文件
+
+1. 新建一个文件.gitignore
+2. 在.gitignore中写入文件名或者正则表达式
+
+```
+//.gitignore文件内容
+
+# window：          //指示win环境下忽略
+*.db              //所有后缀为.db忽略
+test
+
+# java：            //java环境下
+build
+
+# My configurations:
+db.ini
+deploy_key_rsa
+#不忽略.gitignore
+!.gitignore
+```
+
+#### 配置别名
+
+```
+git config --global alias.st status
+git status == git st
+```
+
+ `
+
