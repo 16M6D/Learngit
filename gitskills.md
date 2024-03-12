@@ -66,6 +66,10 @@ Repository:
 
 `rm <file>`删除文件后此时工作区和版本库中不一致,若确实要从版本库中删除则使用 `git rm ``git commit ` ,若删错了,`git checkout -- test.txt`,即用版本库中的版本替换工作区中的版本.
 
+---
+
+
+
 ### 远程仓库
 step1.generate SSH Key
 
@@ -142,10 +146,19 @@ merge时,加上--no-ff合并后的历史有分支，能看出来曾经做过合�
 #### 解决BUG分支
 暂时用不到
 #### feature分支
+
+---
+
+
+
 添加一个新功能时，你肯定不希望因为一些实验性质的代码，把主分支搞乱了，所以，每添加一个新功能，最好新建一个feature分支，在上面开发，完成后，合并(与dev分支)，最后，删除该feature分支。
 开发一个新feature，最好新建一个分支；
 如果要丢弃一个没有被合并过的分支，可以通过git branch -D <name>强行删除
+
 #### 多人协作
+
+---
+
 远程库默认名称 origin
 使用 git remote 查看远程库信息
 git remote -v 查看详细信息 fetch表示可以抓取,push可推送
@@ -160,9 +173,26 @@ git remote -v 查看详细信息 fetch表示可以抓取,push可推送
 建立本地分支和远程分支的关联，使用git branch --set-upstream branch-name origin/branch-name；
 
 从远程抓取分支，使用git pull，如果有冲突，要先处理冲突。
+
+
+
+### REBASE
+
+---
+
+`git rebase`
+
+- rebase操作可以把本地未push的分叉提交历史整理成直线；
+
+- rebase的目的是使得我们在查看历史提交的变化时更容易，因为分叉的提交需要三方对比。
+
 ### 标签管理
 
+---
+
 需要时再看
+
+
 
 ### 使用GitHub
 
